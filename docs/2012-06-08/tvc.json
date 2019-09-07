@@ -1,0 +1,608 @@
+[
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval",
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "http://www.w3.org/2006/time#Interval"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/hasValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "It links an entity (e.g., a Person) to a particular ValueInTime situation;"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/contributor": [
+      {
+        "@value": "David Shotton"
+      },
+      {
+        "@value": "Fabio Vitali"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@value": "Silvio Peroni"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/date": [
+      {
+        "@value": "2012-06-08"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "Sometimes, we need to describe scenarios in which someone (e.g., a person) has a value (e.g., a particular role) during a particular time and for a particular context. Four different things are involved in these kinds of scenarios:\n\n1. the entity having some value, e.g. a person or a document possessing a role or a status;\n\n2. the value had by someone, e.g. a role or a status;\n\n3. the time period during which the entity has that value, e.g. from April 2008 to September 2008;\n\n4. the particular context that characterises the act of having that value, e.g. being a member of an institution or an editor of a particular journal.\n\nThought as natural extension of the Time-indexed Situation pattern (http://ontologydesignpatterns.org/wiki/Submissions:TimeIndexedSituation), this ontological pattern, called Time-indexed Value in Context (TVC), is able to describe these kinds of scenarios."
+      },
+      {
+        "@id": "http://dwellonit.svn.sourceforge.net/svnroot/dwellonit/TimeIndexedValueInContext/tvc.png"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "en",
+        "@value": "The Time-indexed Value in Context"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A pattern for the description of scenarios that involve entities having some value during a particular time and within a particular context."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "time-indexed value in context"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl"
+      },
+      {
+        "@id": "http://www.w3.org/2006/time"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/description",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "urn:swrl#x",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Variable"
+    ]
+  },
+  {
+    "@id": "_:N68bd7ff4d0aa475db1cb3a49986ff54e",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Imp"
+    ],
+    "http://www.w3.org/2003/11/swrl#body": [
+      {
+        "@id": "_:Na913d8784a0a4b219d35be10deac2bd6"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#head": [
+      {
+        "@id": "_:N1a99628b74bc440398d22ec83444458a"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1a99628b74bc440398d22ec83444458a",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:Nfd8f8a983d954291bac0d09a8b93948a"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
+    ]
+  },
+  {
+    "@id": "_:Nfd8f8a983d954291bac0d09a8b93948a",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#x"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#argument2": [
+      {
+        "@id": "urn:swrl#t"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:Na913d8784a0a4b219d35be10deac2bd6",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:Nbd031a3552c54f3ea2c1a14f43d2cde2"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:N55c33000cf9d45fd9f74f64f1e44d417"
+      }
+    ]
+  },
+  {
+    "@id": "_:N55c33000cf9d45fd9f74f64f1e44d417",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:N9f487c61241f4f60a97614e1e3e8bb99"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
+    ]
+  },
+  {
+    "@id": "_:N9f487c61241f4f60a97614e1e3e8bb99",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#x"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#argument2": [
+      {
+        "@id": "urn:swrl#t"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nbd031a3552c54f3ea2c1a14f43d2cde2",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#ClassAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#x"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#classPredicate": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "Having the role \"graduate student\" in a specific time (e.g., now) and context (e.g., \"University of Bologna\")."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "It defines a particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "value in time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:N731c113db4504ae7b929702608bfb2b9"
+      },
+      {
+        "@id": "_:Ndfbcba3e0619448cba4fb2fb8fa58e6c"
+      },
+      {
+        "@id": "_:Ne17b9200d714482abf166cc6280bcec4"
+      },
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
+      }
+    ]
+  },
+  {
+    "@id": "_:N731c113db4504ae7b929702608bfb2b9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withValue"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ndfbcba3e0619448cba4fb2fb8fa58e6c",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "_:N7365eb264ca44fe695c9b2665be544e4"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7365eb264ca44fe695c9b2665be544e4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.w3.org/2006/time#Instant"
+          },
+          {
+            "@id": "http://www.w3.org/2006/time#Interval"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:Ne17b9200d714482abf166cc6280bcec4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/withValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "It holds the value had by the entity taking part to the situation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "with value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionInfo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/atTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "It specifies the particular temporal instant or time period in which the situation takes place."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "at time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2006/time#TemporalEntity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"
+      }
+    ]
+  },
+  {
+    "@id": "urn:swrl#t",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Variable"
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "It links to the specific context within which the fact of the entity having the value is relevant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "within context"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/contributor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/date",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "_:N30451bb95f6e48628692f8f51bd6316b",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Imp"
+    ],
+    "http://www.w3.org/2003/11/swrl#body": [
+      {
+        "@id": "_:N463b04acad6b4c16a211812a058e304c"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#head": [
+      {
+        "@id": "_:N7369969347604976b5639addc4f51952"
+      }
+    ]
+  },
+  {
+    "@id": "_:N463b04acad6b4c16a211812a058e304c",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:Nba9b21579850402a86b79cd1146e3758"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:Ndffa0c78a1814267a339134202bc9e30"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nba9b21579850402a86b79cd1146e3758",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#ClassAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#t"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#classPredicate": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ndffa0c78a1814267a339134202bc9e30",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:Nf579756ef26d40b28efeae3ef7a7e896"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf579756ef26d40b28efeae3ef7a7e896",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#x"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#argument2": [
+      {
+        "@id": "urn:swrl#t"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7369969347604976b5639addc4f51952",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:N7ccf037ed3a14a2dad0cfcb87781690f"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
+    ]
+  },
+  {
+    "@id": "_:N7ccf037ed3a14a2dad0cfcb87781690f",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#x"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#argument2": [
+      {
+        "@id": "urn:swrl#t"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"
+      }
+    ]
+  }
+]
