@@ -35,7 +35,7 @@ _:N7ccf037ed3a14a2dad0cfcb87781690f <http://www.w3.org/2003/11/swrl#propertyPred
 <http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#comment> "It holds the value had by the entity taking part to the situation."@en .
 _:N9f487c61241f4f60a97614e1e3e8bb99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
 <http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "It defines a particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."@en .
-<http://www.essepuntato.it/2012/04/tvc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://purl.org/spar/tvc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 _:N731c113db4504ae7b929702608bfb2b9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
 _:Nf579756ef26d40b28efeae3ef7a7e896 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .

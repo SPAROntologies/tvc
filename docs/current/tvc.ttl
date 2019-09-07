@@ -22,7 +22,7 @@ dc:description a owl:AnnotationProperty .
 
 dc:title a owl:AnnotationProperty .
 
-<http://www.essepuntato.it/2012/04/tvc> a owl:Ontology ;
+<http://purl.org/spar/tvc> a owl:Ontology ;
     rdfs:label "time-indexed value in context"@en ;
     dc:contributor "David Shotton",
         "Fabio Vitali" ;
