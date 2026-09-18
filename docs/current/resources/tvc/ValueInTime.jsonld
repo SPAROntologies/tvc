@@ -1,0 +1,121 @@
+[
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/tvc/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "value in time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
+      },
+      {
+        "@id": "_:nb084bceed98740d98f2403ae3d8a57ddb2"
+      },
+      {
+        "@id": "_:nb084bceed98740d98f2403ae3d8a57ddb6"
+      },
+      {
+        "@id": "_:nb084bceed98740d98f2403ae3d8a57ddb1"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Example: having the role \"graduate student\" in a specific time (e.g., now) and context (e.g., \"University of Bologna\")."
+      }
+    ]
+  },
+  {
+    "@id": "_:nb084bceed98740d98f2403ae3d8a57ddb2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "_:nb084bceed98740d98f2403ae3d8a57ddb3"
+      }
+    ]
+  },
+  {
+    "@id": "_:nb084bceed98740d98f2403ae3d8a57ddb3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.w3.org/2006/time#Instant"
+          },
+          {
+            "@id": "http://www.w3.org/2006/time#Interval"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:nb084bceed98740d98f2403ae3d8a57ddb6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "_:nb084bceed98740d98f2403ae3d8a57ddb1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withValue"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  }
+]

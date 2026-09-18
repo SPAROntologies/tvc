@@ -1,0 +1,14 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+
+tisit:atTime a owl:ObjectProperty ;
+    rdfs:label "at time"@en ;
+    rdfs:comment "The relation between a time-indexed situation and a time interval."@en ;
+    rdfs:domain tisit:TimeIndexedSituation ;
+    rdfs:isDefinedBy tisit: ;
+    rdfs:range ti:TimeInterval ;
+    rdfs:subPropertyOf sit:isSettingFor .
+

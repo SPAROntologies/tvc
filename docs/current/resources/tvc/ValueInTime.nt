@@ -1,0 +1,26 @@
+_:nb084bceed98740d98f2403ae3d8a57ddb2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/atTime> .
+_:nb084bceed98740d98f2403ae3d8a57ddb6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/withinContext> .
+_:nb084bceed98740d98f2403ae3d8a57ddb1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2004/02/skos/core#note> "Example: having the role \"graduate student\" in a specific time (e.g., now) and context (e.g., \"University of Bologna\")."@en .
+_:nb084bceed98740d98f2403ae3d8a57ddb1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/withValue> .
+_:nb084bceed98740d98f2403ae3d8a57ddb3 <http://www.w3.org/2002/07/owl#unionOf> _:nb084bceed98740d98f2403ae3d8a57ddb4 .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:nb084bceed98740d98f2403ae3d8a57ddb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2006/time#Instant> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."@en .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> .
+_:nb084bceed98740d98f2403ae3d8a57ddb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:nb084bceed98740d98f2403ae3d8a57ddb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:nb084bceed98740d98f2403ae3d8a57ddb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nb084bceed98740d98f2403ae3d8a57ddb2 .
+_:nb084bceed98740d98f2403ae3d8a57ddb2 <http://www.w3.org/2002/07/owl#someValuesFrom> _:nb084bceed98740d98f2403ae3d8a57ddb3 .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n    " .
+_:nb084bceed98740d98f2403ae3d8a57ddb6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#label> "value in time"@en .
+_:nb084bceed98740d98f2403ae3d8a57ddb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nb084bceed98740d98f2403ae3d8a57ddb5 .
+_:nb084bceed98740d98f2403ae3d8a57ddb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:nb084bceed98740d98f2403ae3d8a57ddb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2006/time#Interval> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nb084bceed98740d98f2403ae3d8a57ddb6 .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nb084bceed98740d98f2403ae3d8a57ddb1 .
+_:nb084bceed98740d98f2403ae3d8a57ddb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .

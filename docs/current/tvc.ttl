@@ -1,16 +1,22 @@
-@prefix : <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix situation: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix schema: <https://schema.org/> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
-@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix timeindexedsituation: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
-@prefix timeinterval: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
 dc:contributor a owl:AnnotationProperty .
 
@@ -23,34 +29,144 @@ dc:description a owl:AnnotationProperty .
 dc:title a owl:AnnotationProperty .
 
 <http://purl.org/spar/tvc> a owl:Ontology ;
-    rdfs:label "time-indexed value in context"@en ;
-    dc:contributor "David Shotton",
-        "Fabio Vitali" ;
-    dc:creator "Silvio Peroni" ;
-    dc:date "2012-06-08" ;
-    dc:description <http://dwellonit.svn.sourceforge.net/svnroot/dwellonit/TimeIndexedValueInContext/tvc.png>,
-        """Sometimes, we need to describe scenarios in which someone (e.g., a person) has a value (e.g., a particular role) during a particular time and for a particular context. Four different things are involved in these kinds of scenarios:
+    rdfs:label "Time-indexed Value in Context pattern"@en ;
+    dc:contributor "David Shotton (https://orcid.org/0000-0001-5506-523X)",
+        "Fabio Vitali (https://orcid.org/0000-0002-7562-5203)",
+        "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)" ;
+    dc:creator "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)" ;
+    dc:date "2026-09-18" ;
+    dc:description """
+The **_Time-indexed Value in Context pattern (TVC)_** is an Ontology Design Pattern for the description of scenarios that involve entities having some value during a particular time and within a particular context.
 
-1. the entity having some value, e.g. a person or a document possessing a role or a status;
+![The main architecture of TVC.](tvc.png)
 
-2. the value had by someone, e.g. a role or a status;
+Sometimes, we need to describe scenarios in which someone (e.g., a person) has a value (e.g., a particular role) during a particular time and for a particular context. 
+Four different things are involved in these kinds of scenarios:
 
-3. the time period during which the entity has that value, e.g. from April 2008 to September 2008;
+1. the _entity_ having some value, e.g. a person or a document possessing a role or a status;
 
-4. the particular context that characterises the act of having that value, e.g. being a member of an institution or an editor of a particular journal.
+2. the _value_ had by someone, e.g. a role or a status;
 
-Thought as natural extension of the Time-indexed Situation pattern (http://ontologydesignpatterns.org/wiki/Submissions:TimeIndexedSituation), this ontological pattern, called Time-indexed Value in Context (TVC), is able to describe these kinds of scenarios."""@en ;
-    dc:title "The Time-indexed Value in Context"@en ;
-    rdfs:comment "A pattern for the description of scenarios that involve entities having some value during a particular time and within a particular context."@en ;
+3. the _time period_ during which the entity has that value, e.g. from April 2008 to September 2008;
+
+4. the particular _context_ that characterises the act of having that value, e.g. being a member of an institution or an editor of a particular journal.
+
+Thought as a natural extension of the [_Time-indexed Situation pattern_](http://ontologydesignpatterns.org/wiki/Submissions:TimeIndexedSituation), TVC is able to describe these kinds of scenarios.
+
+## Examples of use
+
+In the following subsections, we introduce some examples to showcase how to use TVC. 
+
+The prefixes that are used in all the examples provided below are defined as follows:
+
+        @prefix : <http://www.sparontologies.net/example/> .
+        @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+        @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+        @prefix time: <http://www.w3.org/2006/time#> .
+        @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Holding a role within a specific time frame
+
+TVC easily allows one to model people's roles within certain contexts (e.g., organisations) and how these change through time, while keeping track of the fact that they all refer to the same entities.
+
+The following example shows how to model the fact that a researcher holds the role of editor-in-chief for a scientific journal for a specific time interval.
+
+        :john-doe a foaf:Person ;
+            tvc:hasValue :editorial-role-situation .
+
+        :editorial-role-situation a tvc:ValueInTime ;
+            tvc:withValue :editor-in-chief ;
+            tvc:withinContext :journal-of-semantics ;
+            tvc:atTime :tenure-interval .
+
+        :tenure-interval a ti:TimeInterval ;
+            ti:hasIntervalStartDate "2020-01-01"^^xsd:date ;
+            ti:hasIntervalEndDate "2024-12-31"^^xsd:date .
+
+        :journal-of-semantics a foaf:Organization .
+
+## Competency Questions
+
+TVC can be used for answering several questions related to values that change in time, according to some context.
+
+In the following subsections, some of them are introduced together with their respective SPARQL queries. 
+
+The prefixes that are used in all the SPARQL queries provided below are defined as follows:
+
+        PREFIX : <http://www.sparontologies.net/example/>
+        PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>
+        PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>
+
+### CQ1
+
+What value did a specific entity hold, within which context, and during what time interval?
+        
+        SELECT ?value ?context ?startDate ?endDate WHERE {
+            :john-doe tvc:hasValue ?sit .
+            ?sit tvc:withValue ?value ;
+                 tvc:withinContext ?context ;
+                 tvc:atTime ?interval .
+            OPTIONAL { ?interval ti:hasIntervalStartDate ?startDate . }
+            OPTIONAL { ?interval ti:hasIntervalEndDate ?endDate . }
+        }
+
+### CQ2
+
+Which entities held a specific value within a given context?
+
+        SELECT ?entity ?sit WHERE {
+            ?entity tvc:hasValue ?sit .
+            ?sit tvc:withValue :editor-in-chief ;
+                tvc:withinContext :journal-of-semantics .
+        }
+
+"""@en ;
+    dc:title "The Time-indexed Value in Context pattern"@en ;
+    dcterms:bibliographicCitation "" ;
+    dcterms:created "2012-06-08" ;
+    dcterms:issued "2012-06-08" ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-09-18" ;
+    dcterms:publisher <https://ror.org/00wb4mk85> ;
+    dcterms:source <https://github.com/SPAROntologies/tvc/blob/master/docs/cq.md> ;
+    bibo:doi "TBA" ;
+    bibo:status <http://purl.org/ontology/bibo/status/published> ;
+    vann:changes """
+* **v1.1.0**: 
+Added new documentation, including annotation properties (e.g., `bibo:doi`, `schema:codeRepository`, etc.), term properties (e.g., `vann:example`, `vs:term_status`, etc.), exemplary competency questions with their respective SPARQL queries, and a Grafoo diagram.
+    """@en ;
+    vann:preferredNamespacePrefix "tvc"@en ;
+    vann:preferredNamespaceUri "http://purl.org/spar/tvc"@en ;
+    owl:backwardCompatibleWith tvc:2012-06-08 ;
     owl:imports <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl>,
-        <http://www.w3.org/2006/time> .
+        <http://www.w3.org/2006/time> ;
+    owl:priorVersion literal:2012-06-08 ;
+    owl:versionIRI literal:2026-09-18 ;
+    owl:versionInfo "1.1.0" ;
+    foaf:logo <https://github.com/SPAROntologies/tvc/blob/master/spar.png> ;
+    schema:codeRepository <https://github.com/SPAROntologies/tvc> ;
+    schema:image <https://github.com/SPAROntologies/tvc/blob/master/docs/current/tvc.png> ;
+    schema:includedInDataCatalog <https://fairsharing.org/> ;
+    schema:keywords "ontology design patterns"@en,
+        "time-indexed values in context"@en .
 
-:hasValue a owl:ObjectProperty ;
+tvc:hasValue a owl:ObjectProperty ;
     rdfs:label "has value"@en ;
-    rdfs:comment "It links an entity (e.g., a Person) to a particular ValueInTime situation;"@en ;
-    rdfs:domain owl:Thing ;
-    rdfs:range :ValueInTime ;
-    rdfs:subPropertyOf timeindexedsituation:hasTimeIndexedSetting .
+    vann:example """
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+    """ ;
+    rdfs:comment "The relation between an entity (e.g., a person) and a particular value-in-time situation."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:range tvc:ValueInTime ;
+    rdfs:subPropertyOf tisit:hasTimeIndexedSetting ;
+    vs:term_status reg:statusStable .
 
 rdfs:comment a owl:AnnotationProperty .
 
@@ -58,44 +174,145 @@ rdfs:label a owl:AnnotationProperty .
 
 owl:versionInfo a owl:AnnotationProperty .
 
-:withValue a owl:ObjectProperty ;
+tvc:withValue a owl:ObjectProperty ;
     rdfs:label "with value"@en ;
-    rdfs:comment "It holds the value had by the entity taking part to the situation."@en ;
-    rdfs:domain :ValueInTime ;
-    rdfs:range owl:Thing ;
-    rdfs:subPropertyOf timeindexedsituation:forEntity .
+    vann:example """
+    :my-person
+        tvc:hasValue :my-value-in-time .
 
-:withinContext a owl:ObjectProperty ;
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+    """ ;
+    rdfs:comment "The relation between the value held by the entity taking part to the value-in-time situation."@en ;
+    rdfs:domain tvc:ValueInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:subPropertyOf tisit:forEntity ;
+    vs:term_status reg:statusStable .
+
+tvc:withinContext a owl:ObjectProperty ;
     rdfs:label "within context"@en ;
-    rdfs:comment "It links to the specific context within which the fact of the entity having the value is relevant."@en ;
-    rdfs:domain :ValueInTime ;
-    rdfs:range owl:Thing ;
-    rdfs:subPropertyOf timeindexedsituation:forEntity .
+    vann:example """
+    :my-person
+        tvc:hasValue :my-value-in-time .
 
-timeinterval:TimeInterval owl:equivalentClass time:Interval .
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+        
+    :my-university a foaf:Organization .
+    """ ;
+    rdfs:comment "The relation between the specific context within which the fact of the entity having the value is relevant."@en ;
+    rdfs:domain tvc:ValueInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:subPropertyOf tisit:forEntity ;
+    vs:term_status reg:statusStable .
 
-:atTime a owl:ObjectProperty ;
+sit:Situation a owl:Class ;
+    rdfs:label "situation"@en ;
+    rdfs:comment "A view on a set of entities. It can be seen as a 'relational context', reifying a relation."@en ;
+    rdfs:isDefinedBy sit: .
+
+tisit:hasTimeIndexedSetting a owl:ObjectProperty ;
+    rdfs:label "has time indexed setting"@en ;
+    rdfs:comment "The relation between an entity and a time-indexed situation."@en ;
+    rdfs:isDefinedBy tisit: ;
+    rdfs:range tisit:TimeIndexedSituation ;
+    owl:inverseOf tisit:forEntity .
+
+time:Instant a owl:Class ;
+    rdfs:label "time instant"@en ;
+    rdfs:comment "A temporal entity with zero extent or duration."@en ;
+    rdfs:isDefinedBy <https://www.w3.org/2006/time#> ;
+    rdfs:subClassOf time:TemporalEntity .
+
+tisit:atTime a owl:ObjectProperty ;
+    rdfs:label "at time"@en ;
+    rdfs:comment "The relation between a time-indexed situation and a time interval."@en ;
+    rdfs:domain tisit:TimeIndexedSituation ;
+    rdfs:isDefinedBy tisit: ;
+    rdfs:range ti:TimeInterval ;
+    rdfs:subPropertyOf sit:isSettingFor .
+
+ti:TimeInterval a owl:Class ;
+    rdfs:label "time interval"@en ;
+    rdfs:comment "A region in a dimensional space that aims at representing time."@en ;
+    rdfs:isDefinedBy ti: ;
+    owl:equivalentClass time:Interval .
+
+time:Interval a owl:Class ;
+    rdfs:label "time interval"@en ;
+    rdfs:comment "A temporal entity with an extent or duration."@en ;
+    rdfs:isDefinedBy <https://www.w3.org/2006/time#> ;
+    rdfs:subClassOf time:TemporalEntity .
+
+tvc:atTime a owl:ObjectProperty ;
     rdfs:label "at time" ;
-    rdfs:comment "It specifies the particular temporal instant or time period in which the situation takes place."@en ;
-    rdfs:domain :ValueInTime ;
-    rdfs:range time:TemporalEntity ;
-    rdfs:subPropertyOf situation:isSettingFor .
+    vann:example """
+    :my-person
+        tvc:hasValue :my-value-in-time .
 
-:ValueInTime a owl:Class ;
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+
+    :my-time-interval a ti:TimeInterval ;
+        ti:hasIntervalStartDate "2017-11-01" ;
+        ti:hasIntervalEndDate "2020-03-20" .
+    """ ;
+    rdfs:comment "The relation between a value-in-time situation and the particular temporal instant or time period in which the situation takes place."@en ;
+    rdfs:domain tvc:ValueInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:range time:TemporalEntity ;
+    rdfs:subPropertyOf sit:isSettingFor ;
+    vs:term_status reg:statusStable .
+
+sit:isSettingFor a owl:ObjectProperty ;
+    rdfs:label "is setting for"@en ;
+    rdfs:comment "The relation between a situation and an entity."@en ;
+    rdfs:domain sit:Situation ;
+    rdfs:isDefinedBy sit: .
+
+tisit:forEntity a owl:ObjectProperty ;
+    rdfs:label "for entity"@en ;
+    rdfs:comment "The relation between a time-indexed situation and an entity."@en ;
+    rdfs:isDefinedBy tisit: ;
+    rdfs:subPropertyOf sit:isSettingFor .
+
+time:TemporalEntity a owl:Class ;
+    rdfs:label "temporal entity"@en ;
+    rdfs:comment "A temporal interval or instant."@en ;
+    rdfs:isDefinedBy <https://www.w3.org/2006/time#> .
+
+tvc:ValueInTime a owl:Class ;
     rdfs:label "value in time"@en ;
-    dc:description "Having the role \"graduate student\" in a specific time (e.g., now) and context (e.g., \"University of Bologna\")."@en ;
-    rdfs:comment "It defines a particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."@en ;
+    vann:example """
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+    """ ;
+    rdfs:comment "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty :withValue ;
+            owl:onProperty tvc:withValue ;
             owl:someValuesFrom owl:Thing ],
         [ a owl:Restriction ;
-            owl:onProperty :atTime ;
+            owl:onProperty tvc:atTime ;
             owl:someValuesFrom [ a owl:Class ;
                     owl:unionOf ( time:Instant time:Interval ) ] ],
         [ a owl:Restriction ;
-            owl:onProperty :withinContext ;
+            owl:onProperty tvc:withinContext ;
             owl:someValuesFrom owl:Thing ],
-        timeindexedsituation:TimeIndexedSituation .
+        tisit:TimeIndexedSituation ;
+    vs:term_status reg:statusStable ;
+    skos:note "Example: having the role \"graduate student\" in a specific time (e.g., now) and context (e.g., \"University of Bologna\")."@en .
 
 <urn:swrl#t> a swrl:Variable .
 
@@ -105,35 +322,35 @@ timeinterval:TimeInterval owl:equivalentClass time:Interval .
     swrl:body [ a swrl:AtomList ;
             rdf:first [ a swrl:ClassAtom ;
                     swrl:argument1 <urn:swrl#t> ;
-                    swrl:classPredicate timeinterval:TimeInterval ] ;
+                    swrl:classPredicate ti:TimeInterval ] ;
             rdf:rest [ a swrl:AtomList ;
                     rdf:first [ a swrl:IndividualPropertyAtom ;
                             swrl:argument1 <urn:swrl#x> ;
                             swrl:argument2 <urn:swrl#t> ;
-                            swrl:propertyPredicate :atTime ] ;
+                            swrl:propertyPredicate tvc:atTime ] ;
                     rdf:rest () ] ] ;
     swrl:head [ a swrl:AtomList ;
             rdf:first [ a swrl:IndividualPropertyAtom ;
                     swrl:argument1 <urn:swrl#x> ;
                     swrl:argument2 <urn:swrl#t> ;
-                    swrl:propertyPredicate timeindexedsituation:atTime ] ;
+                    swrl:propertyPredicate tisit:atTime ] ;
             rdf:rest () ] .
 
 [] a swrl:Imp ;
     swrl:body [ a swrl:AtomList ;
             rdf:first [ a swrl:ClassAtom ;
                     swrl:argument1 <urn:swrl#x> ;
-                    swrl:classPredicate :ValueInTime ] ;
+                    swrl:classPredicate tvc:ValueInTime ] ;
             rdf:rest [ a swrl:AtomList ;
                     rdf:first [ a swrl:IndividualPropertyAtom ;
                             swrl:argument1 <urn:swrl#x> ;
                             swrl:argument2 <urn:swrl#t> ;
-                            swrl:propertyPredicate timeindexedsituation:atTime ] ;
+                            swrl:propertyPredicate tisit:atTime ] ;
                     rdf:rest () ] ] ;
     swrl:head [ a swrl:AtomList ;
             rdf:first [ a swrl:IndividualPropertyAtom ;
                     swrl:argument1 <urn:swrl#x> ;
                     swrl:argument2 <urn:swrl#t> ;
-                    swrl:propertyPredicate :atTime ] ;
+                    swrl:propertyPredicate tvc:atTime ] ;
             rdf:rest () ] .
 

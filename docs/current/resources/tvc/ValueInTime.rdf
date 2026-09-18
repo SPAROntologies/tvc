@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb2">
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb6">
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withinContext"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb1">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withValue"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/ValueInTime">
+    <skos:note xml:lang="en">Example: having the role "graduate student" in a specific time (e.g., now) and context (e.g., "University of Bologna").</skos:note>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
+    <rdfs:comment xml:lang="en">A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"/>
+    <rdfs:subClassOf rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb2"/>
+    <rdfs:subClassOf rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb6"/>
+    <rdfs:subClassOf rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb1"/>
+    <vann:example>
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+    </vann:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">value in time</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb3">
+    <owl:unionOf rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb4">
+    <rdf:first rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <rdf:rest rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nb084bceed98740d98f2403ae3d8a57ddb5">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  </rdf:Description>
+</rdf:RDF>
