@@ -1,0 +1,8 @@
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#label> "has value"@en .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://purl.org/vocab/vann/example> "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n    " .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity (e.g., a person) and a particular value-in-time situation."@en .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

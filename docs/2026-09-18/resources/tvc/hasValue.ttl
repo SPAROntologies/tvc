@@ -1,0 +1,25 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+tvc:hasValue a owl:ObjectProperty ;
+    rdfs:label "has value"@en ;
+    vann:example """
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+    """ ;
+    rdfs:comment "The relation between an entity (e.g., a person) and a particular value-in-time situation."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:range tvc:ValueInTime ;
+    rdfs:subPropertyOf tisit:hasTimeIndexedSetting ;
+    vs:term_status reg:statusStable .
+
