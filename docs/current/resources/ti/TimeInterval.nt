@@ -1,0 +1,5 @@
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#label> "time interval"@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/2006/time#Interval> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "A region in a dimensional space that aims at representing time."@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

@@ -1,10 +1,17 @@
-This is a copy - with a related change of the main URL of the ontology - of the Time-indexed Value in Context ontology (imported by PSO and PRO) and previously available at http://www.essepuntato.it/2012/04/tvc. It has been imported here in SPAR for guaranteeing its long-term sustainability.
+# Time-indexed Value in Context pattern
 
-The directory `docs` contains all the files related to the ontology, its versions in time, and the related documentations. In particular, it includes:
+The **_Time-indexed Value in Context pattern (TVC)_** is an Ontology Design Pattern for the description of scenarios that involve entities having some value during a particular time and within a particular context.
 
-* the `current` directory, where the files of the current version of the ontology are stored;
-* one `yyyy-mm-dd` version directory for each of the versions of the ontology developed.
+**URL:** http://purl.org/spar/tvc
 
-The `current` directory contains a `.owl` file named after the lowercase ontology acronym, which is the source of the ontology in a particular format between RDF/XML, Turtle, N-triples, or JSON-LD. In addition to this file, the directory includes five other files, named in the same way and with the following extensions specifying each of five different formats: `.xml` (RDF/XML), `.ttl` (Turtle), `.nt` (Ntriple), `.json` (JSON-LD), `.html` (HTML, i.e. the human readable documentation of the ontology). All the images used in the documentation should additionally be included in this `.html` directory.
+**Creators**: [Silvio Peroni](http://orcid.org/0000-0003-0530-4305)
 
-The version directories (i.e. `yyyy-mm-dd`) contains the same kinds of files as those included in the `current` directory, but specific for that particular version. However, the `.owl` file should be present only in the `current` directory.
+**Contributors**: [David Shotton](https://orcid.org/0000-0001-5506-523X),
+[Fabio Vitali](https://orcid.org/0000-0002-7562-5203),
+[Sebastian Barzaghi](https://orcid.org/0000-0002-0799-1527)
+
+**License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+**Cite as:** Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and the Linked Data: describing roles, statuses, temporal and contextual extents. In Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. DOI: https://doi.org/10.1145/2362499.2362502.
+
+> This is a copy - with a related change of the main URL of the ontology - of the Time-indexed Value in Context ontology (imported by PSO and PRO) and previously available at http://www.essepuntato.it/2012/04/tvc. It has been imported here in SPAR for guaranteeing its long-term sustainability.

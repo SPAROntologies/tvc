@@ -1,0 +1,45 @@
+[
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n        \n    :my-university a foaf:Organization .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between the specific context within which the fact of the entity having the value is relevant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/tvc/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "within context"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+
+tisit:forEntity a owl:ObjectProperty ;
+    rdfs:label "for entity"@en ;
+    rdfs:comment "The relation between a time-indexed situation and an entity."@en ;
+    rdfs:isDefinedBy tisit: ;
+    rdfs:subPropertyOf sit:isSettingFor .
+
