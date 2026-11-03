@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: The Time-indexed Value in Context pattern (TVC)
+message: >-
+If you use this software, please cite it using the
+metadata from this file.
+type: software
+authors:
+- given-names: Silvio
+  family-names: Peroni
+  orcid: 'https://orcid.org/0000-0003-0530-4305'
+repository-code: 'https://github.com/SPAROntologies/tvc'
+abstract: The Time-indexed Value in Context pattern (TVC) is an Ontology Design Pattern for the description of scenarios that involve entities having some value during a particular time and within a particular context. 
+keywords:
+- ontology design patterns
+- time-indexed values in context
+license: CC-BY-4.0
+version: 1.1.1
+date-released: '2026-10-05'
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Peroni"
+    given-names: "Silvio"
+    orcid: "https://orcid.org/0000-0003-0530-4305"
+  - family-names: "Shotton"
+    given-names: "David"
+    orcid: "https://orcid.org/0000-0001-5506-523X"
+  - family-names: "Vitali"
+    given-names: "Fabio"
+    orcid: "https://orcid.org/0000-0002-7562-5203"
+  doi: "10.1145/2362499.2362502"
+  collection-title: "Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012)"
+  collection-type: "proceedings"
+  notes: "I-SEMANTICS '12"
+  title: "Scholarly publishing and the Linked Data: describing roles, statuses, temporal and contextual extents"
+  year: 2012
+  publisher:
+    name: "Association for Computing Machinery"
+    city: "New York"
+    country: "USA"

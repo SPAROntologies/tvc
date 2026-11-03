@@ -44,11 +44,8 @@ Sometimes, we need to describe scenarios in which someone (e.g., a person) has a
 Four different things are involved in these kinds of scenarios:
 
 1. the _entity_ having some value, e.g. a person or a document possessing a role or a status;
-
 2. the _value_ had by someone, e.g. a role or a status;
-
 3. the _time period_ during which the entity has that value, e.g. from April 2008 to September 2008;
-
 4. the particular _context_ that characterises the act of having that value, e.g. being a member of an institution or an editor of a particular journal.
 
 Thought as a natural extension of the [_Time-indexed Situation pattern_](http://ontologydesignpatterns.org/wiki/Submissions:TimeIndexedSituation), TVC is able to describe these kinds of scenarios.
@@ -59,12 +56,11 @@ In the following subsections, we introduce some examples to showcase how to use 
 
 The prefixes that are used in all the examples provided below are defined as follows:
 
-        @prefix : <http://www.sparontologies.net/example/> .
-        @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
-        @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
-        @prefix time: <http://www.w3.org/2006/time#> .
-        @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix : <http://www.sparontologies.net/example/> .
+    @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+    @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ### Holding a role within a specific time frame
 
@@ -123,32 +119,33 @@ Which entities held a specific value within a given context?
 
 """@en ;
     dc:title "The Time-indexed Value in Context pattern"@en ;
-    dcterms:bibliographicCitation "" ;
+    dcterms:bibliographicCitation "Silvio Peroni. The Time-indexed Value in Context pattern. Revision: 1.1.1. http://purl.org/spar/tvc. " ;
     dcterms:created "2012-06-08" ;
     dcterms:issued "2012-06-08" ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-09-18" ;
+    dcterms:modified "2026-10-05" ;
     dcterms:publisher <https://ror.org/00wb4mk85> ;
     dcterms:source <https://github.com/SPAROntologies/tvc/blob/master/docs/cq.md> ;
     bibo:doi "TBA" ;
     bibo:status <http://purl.org/ontology/bibo/status/published> ;
-    vann:changes """
-* **v1.1.0**: 
-Added new documentation, including annotation properties (e.g., `bibo:doi`, `schema:codeRepository`, etc.), term properties (e.g., `vann:example`, `vs:term_status`, etc.), exemplary competency questions with their respective SPARQL queries, and a Grafoo diagram.
-    """@en ;
+    vann:changes <https://github.com/SPAROntologies/tvc/blob/master/CHANGELOG.md> ;
     vann:preferredNamespacePrefix "tvc"@en ;
     vann:preferredNamespaceUri "http://purl.org/spar/tvc"@en ;
-    owl:backwardCompatibleWith tvc:2012-06-08 ;
+    owl:backwardCompatibleWith tvc:2026-09-18 ;
     owl:imports <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl>,
         <http://www.w3.org/2006/time> ;
-    owl:priorVersion literal:2012-06-08 ;
-    owl:versionIRI literal:2026-09-18 ;
-    owl:versionInfo "1.1.0" ;
-    foaf:logo <https://github.com/SPAROntologies/tvc/blob/master/spar.png> ;
+    owl:priorVersion literal:2026-09-18 ;
+    owl:versionIRI literal:2026-10-05 ;
+    owl:versionInfo "1.1.1" ;
+    foaf:logo <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> ;
     schema:codeRepository <https://github.com/SPAROntologies/tvc> ;
     schema:image <https://github.com/SPAROntologies/tvc/blob/master/docs/current/tvc.png> ;
     schema:includedInDataCatalog <https://fairsharing.org/> ;
-    schema:keywords "ontology design patterns"@en,
+    dc:language <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+    schema:keywords 
+        "SPAR Ontologies"@en ,
+        "Semantic Publishing and Referencing Ontologies"@en ,
+        "ontology design patterns"@en,
         "time-indexed values in context"@en .
 
 tvc:hasValue a owl:ObjectProperty ;
