@@ -13,6 +13,44 @@
    xmlns:vann="http://purl.org/vocab/vann/"
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb11">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#t"/>
+    <swrl:propertyPredicate rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/ValueInTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">value in time</rdfs:label>
+    <vann:example>
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+    </vann:example>
+    <rdfs:comment xml:lang="en">A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
+    <rdfs:subClassOf rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb1"/>
+    <rdfs:subClassOf rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb2"/>
+    <rdfs:subClassOf rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb6"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <skos:note xml:lang="en">Example: having the role "graduate student" in a specific time (e.g., now) and context (e.g., "University of Bologna").</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withValue"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb20">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#t"/>
+    <swrl:propertyPredicate rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/tvc">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <rdfs:label xml:lang="en">Time-indexed Value in Context pattern</rdfs:label>
@@ -133,16 +171,139 @@ Which entities held a specific value within a given context?
     <schema:keywords xml:lang="en">ontology design patterns</schema:keywords>
     <schema:keywords xml:lang="en">time-indexed values in context</schema:keywords>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b7">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-    <swrl:body rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b8"/>
-    <swrl:head rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b12"/>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">for entity</rdfs:label>
+    <rdfs:comment xml:lang="en">The relation between a time-indexed situation and an entity.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b11">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  <rdf:Description rdf:about="urn:swrl#x">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is setting for</rdfs:label>
+    <rdfs:comment xml:lang="en">The relation between a situation and an entity.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#Situation"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb12">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb13"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/hasValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has value</rdfs:label>
+    <vann:example>
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+    </vann:example>
+    <rdfs:comment xml:lang="en">The relation between an entity (e.g., a person) and a particular value-in-time situation.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
+    <rdfs:range rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has time indexed setting</rdfs:label>
+    <rdfs:comment xml:lang="en">The relation between an entity and a time-indexed situation.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"/>
+    <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb10">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb11"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">time instant</rdfs:label>
+    <rdfs:comment xml:lang="en">A temporal entity with zero extent or duration.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://www.w3.org/2006/time#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#Situation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">situation</rdfs:label>
+    <rdfs:comment xml:lang="en">A view on a set of entities. It can be seen as a 'relational context', reifying a relation.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">time interval</rdfs:label>
+    <rdfs:comment xml:lang="en">A temporal entity with an extent or duration.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://www.w3.org/2006/time#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withinContext"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb16">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
     <swrl:argument1 rdf:resource="urn:swrl#x"/>
-    <swrl:argument2 rdf:resource="urn:swrl#t"/>
-    <swrl:propertyPredicate rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+    <swrl:classPredicate rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withinContext">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">within context</rdfs:label>
+    <vann:example>
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+        
+    :my-university a foaf:Organization .
+    </vann:example>
+    <rdfs:comment xml:lang="en">The relation between the specific context within which the fact of the entity having the value is relevant.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">time interval</rdfs:label>
+    <rdfs:comment xml:lang="en">A region in a dimensional space that aims at representing time.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">temporal entity</rdfs:label>
+    <rdfs:comment xml:lang="en">A temporal interval or instant.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://www.w3.org/2006/time#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb17">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb18"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb15">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb16"/>
+    <rdf:rest rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb17"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+    <owl:someValuesFrom rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb3"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withValue">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -162,121 +323,20 @@ Which entities held a specific value within a given context?
     <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"/>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b18">
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb8">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb9"/>
+    <rdf:rest rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb10"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb4">
+    <rdf:first rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <rdf:rest rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb18">
     <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
     <swrl:argument1 rdf:resource="urn:swrl#x"/>
     <swrl:argument2 rdf:resource="urn:swrl#t"/>
     <swrl:propertyPredicate rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">time interval</rdfs:label>
-    <rdfs:comment xml:lang="en">A region in a dimensional space that aims at representing time.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
-    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#Interval"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b1">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withValue"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b15">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-    <rdf:first rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b16"/>
-    <rdf:rest rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b17"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has time indexed setting</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between an entity and a time-indexed situation.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"/>
-    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"/>
-    <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b6">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withinContext"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/ValueInTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">value in time</rdfs:label>
-    <vann:example>
-    :my-person
-        tvc:hasValue :my-value-in-time .
-
-    :my-value-in-time a tvc:ValueInTime ;
-        tvc:withValue :graduate-student ;
-        tvc:atTime :my-time-interval ;
-        tvc:withinContext :my-university .
-    </vann:example>
-    <rdfs:comment xml:lang="en">A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
-    <rdfs:subClassOf rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b1"/>
-    <rdfs:subClassOf rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b2"/>
-    <rdfs:subClassOf rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b6"/>
-    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <skos:note xml:lang="en">Example: having the role "graduate student" in a specific time (e.g., now) and context (e.g., "University of Bologna").</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b8">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-    <rdf:first rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b9"/>
-    <rdf:rest rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b10"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">time interval</rdfs:label>
-    <rdfs:comment xml:lang="en">A temporal entity with an extent or duration.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://www.w3.org/2006/time#"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">at time</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between a time-indexed situation and a time interval.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"/>
-    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b20">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-    <swrl:argument1 rdf:resource="urn:swrl#x"/>
-    <swrl:argument2 rdf:resource="urn:swrl#t"/>
-    <swrl:propertyPredicate rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">temporal entity</rdfs:label>
-    <rdfs:comment xml:lang="en">A temporal interval or instant.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://www.w3.org/2006/time#"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b4">
-    <rdf:first rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    <rdf:rest rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b5"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b16">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-    <swrl:argument1 rdf:resource="urn:swrl#x"/>
-    <swrl:classPredicate rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b9">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-    <swrl:argument1 rdf:resource="urn:swrl#t"/>
-    <swrl:classPredicate rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b12">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-    <rdf:first rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b13"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/atTime">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -301,131 +361,71 @@ Which entities held a specific value within a given context?
     <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"/>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withinContext">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">within context</rdfs:label>
-    <vann:example>
-    :my-person
-        tvc:hasValue :my-value-in-time .
-
-    :my-value-in-time a tvc:ValueInTime ;
-        tvc:withValue :graduate-student ;
-        tvc:atTime :my-time-interval ;
-        tvc:withinContext :my-university .
-        
-    :my-university a foaf:Organization .
-    </vann:example>
-    <rdfs:comment xml:lang="en">The relation between the specific context within which the fact of the entity having the value is relevant.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">time instant</rdfs:label>
-    <rdfs:comment xml:lang="en">A temporal entity with zero extent or duration.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://www.w3.org/2006/time#"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b2">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
-    <owl:someValuesFrom rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b3"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b14">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-    <swrl:body rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b15"/>
-    <swrl:head rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b19"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b17">
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb19">
     <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-    <rdf:first rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b18"/>
+    <rdf:first rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb20"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/hasValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has value</rdfs:label>
-    <vann:example>
-    :my-person
-        tvc:hasValue :my-value-in-time .
-
-    :my-value-in-time a tvc:ValueInTime ;
-        tvc:withValue :graduate-student ;
-        tvc:atTime :my-time-interval ;
-        tvc:withinContext :my-university .
-    </vann:example>
-    <rdfs:comment xml:lang="en">The relation between an entity (e.g., a person) and a particular value-in-time situation.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
-    <rdfs:range rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#Situation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">situation</rdfs:label>
-    <rdfs:comment xml:lang="en">A view on a set of entities. It can be seen as a 'relational context', reifying a relation.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">for entity</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between a time-indexed situation and an entity.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b5">
-    <rdf:first rdf:resource="http://www.w3.org/2006/time#Interval"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b10">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-    <rdf:first rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b11"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/contributor">
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/date">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">is setting for</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between a situation and an entity.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#Situation"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#"/>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b13">
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">at time</rdfs:label>
+    <rdfs:comment xml:lang="en">The relation between a time-indexed situation and a time interval.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb13">
     <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
     <swrl:argument1 rdf:resource="urn:swrl#x"/>
     <swrl:argument2 rdf:resource="urn:swrl#t"/>
     <swrl:propertyPredicate rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b19">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-    <rdf:first rdf:nodeID="n89c1010bd88b4c4b8f6ba7c5245954d6b20"/>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb9">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:argument1 rdf:resource="urn:swrl#t"/>
+    <swrl:classPredicate rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb14">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:body rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb15"/>
+    <swrl:head rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb19"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb5">
+    <rdf:first rdf:resource="http://www.w3.org/2006/time#Interval"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb7">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:body rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb8"/>
+    <swrl:head rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb12"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="na3018f9c629444d0a70c59afd70c608eb4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="urn:swrl#x">
-    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/date">
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/contributor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="urn:swrl#t">
     <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
 </rdf:RDF>

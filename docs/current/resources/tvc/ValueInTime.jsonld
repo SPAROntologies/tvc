@@ -28,16 +28,16 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b2"
-      },
-      {
         "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
       },
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b1"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb6"
       },
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b6"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb2"
+      },
+      {
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb1"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -53,7 +53,23 @@
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b2",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb2",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -64,12 +80,12 @@
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b3"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb3"
       }
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b3",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb3",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -87,29 +103,13 @@
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b1",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb1",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
         "@id": "http://www.essepuntato.it/2012/04/tvc/withValue"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b6",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [

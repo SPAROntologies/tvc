@@ -1,13 +1,47 @@
 [
   {
-    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting",
+    "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A region in a dimensional space that aims at representing time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "time interval"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "http://www.w3.org/2006/time#Interval"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The relation between an entity and a time-indexed situation."
+        "@value": "The relation between a time-indexed situation and an entity."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -18,46 +52,12 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has time indexed setting"
+        "@value": "for entity"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/elements/1.1/contributor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2006/time#TemporalEntity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A temporal interval or instant."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://www.w3.org/2006/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "temporal entity"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"
       }
     ]
   },
@@ -105,141 +105,73 @@
     ]
   },
   {
-    "@id": "http://www.essepuntato.it/2012/04/tvc/withValue",
+    "@id": "urn:swrl#t",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/vocab/vann/example": [
-      {
-        "@value": "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n    "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The relation between the value held by the entity taking part to the value-in-time situation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.org/spar/tvc/"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "with value"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@id": "http://purl.org/linked-data/registry#statusStable"
-      }
+      "http://www.w3.org/2003/11/swrl#Variable"
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b7",
+    "@id": "http://purl.org/dc/elements/1.1/date",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb14",
     "@type": [
       "http://www.w3.org/2003/11/swrl#Imp"
     ],
     "http://www.w3.org/2003/11/swrl#body": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b8"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb15"
       }
     ],
     "http://www.w3.org/2003/11/swrl#head": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b12"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb19"
       }
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b8",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb15",
     "@type": [
       "http://www.w3.org/2003/11/swrl#AtomList"
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b9"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb16"
       }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b10"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb17"
       }
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b9",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb16",
     "@type": [
       "http://www.w3.org/2003/11/swrl#ClassAtom"
-    ],
-    "http://www.w3.org/2003/11/swrl#argument1": [
-      {
-        "@id": "urn:swrl#t"
-      }
-    ],
-    "http://www.w3.org/2003/11/swrl#classPredicate": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b10",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#AtomList"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b11"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@list": []
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b11",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
     ],
     "http://www.w3.org/2003/11/swrl#argument1": [
       {
         "@id": "urn:swrl#x"
       }
     ],
-    "http://www.w3.org/2003/11/swrl#argument2": [
+    "http://www.w3.org/2003/11/swrl#classPredicate": [
       {
-        "@id": "urn:swrl#t"
-      }
-    ],
-    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
       }
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b12",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb17",
     "@type": [
       "http://www.w3.org/2003/11/swrl#AtomList"
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b13"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb18"
       }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
@@ -249,7 +181,7 @@
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b13",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb18",
     "@type": [
       "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
     ],
@@ -270,259 +202,39 @@
     ]
   },
   {
-    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb19",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2003/11/swrl#AtomList"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
       {
-        "@language": "en",
-        "@value": "The relation between a time-indexed situation and a time interval."
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb20"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "at time"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"
+        "@list": []
       }
     ]
   },
   {
-    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb20",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2003/11/swrl#argument1": [
       {
-        "@language": "en",
-        "@value": "The relation between a time-indexed situation and an entity."
+        "@id": "urn:swrl#x"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2003/11/swrl#argument2": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"
+        "@id": "urn:swrl#t"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "for entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/vocab/vann/example": [
-      {
-        "@value": "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n    "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.org/spar/tvc/"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "value in time"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b1"
-      },
-      {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b2"
-      },
-      {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b6"
-      },
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@id": "http://purl.org/linked-data/registry#statusStable"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Example: having the role \"graduate student\" in a specific time (e.g., now) and context (e.g., \"University of Bologna\")."
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/withValue"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
       {
         "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b3"
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.w3.org/2006/time#Instant"
-          },
-          {
-            "@id": "http://www.w3.org/2006/time#Interval"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b6",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/elements/1.1/creator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#Situation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A view on a set of entities. It can be seen as a 'relational context', reifying a relation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "situation"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/vocab/vann/example": [
-      {
-        "@value": "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n        \n    :my-university a foaf:Organization .\n    "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The relation between the specific context within which the fact of the entity having the value is relevant."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.org/spar/tvc/"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "within context"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@id": "http://purl.org/linked-data/registry#statusStable"
       }
     ]
   },
@@ -552,58 +264,6 @@
       {
         "@id": "http://www.w3.org/2006/time#TemporalEntity"
       }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/elements/1.1/title",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/elements/1.1/date",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "urn:swrl#t",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#Variable"
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2006/time#Instant",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A temporal entity with zero extent or duration."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://www.w3.org/2006/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "time instant"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/2006/time#TemporalEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2002/07/owl#versionInfo",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
@@ -785,67 +445,67 @@
     ]
   },
   {
-    "@id": "urn:swrl#x",
+    "@id": "http://purl.org/dc/elements/1.1/title",
     "@type": [
-      "http://www.w3.org/2003/11/swrl#Variable"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b14",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb7",
     "@type": [
       "http://www.w3.org/2003/11/swrl#Imp"
     ],
     "http://www.w3.org/2003/11/swrl#body": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b15"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb8"
       }
     ],
     "http://www.w3.org/2003/11/swrl#head": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b19"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb12"
       }
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b15",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb8",
     "@type": [
       "http://www.w3.org/2003/11/swrl#AtomList"
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b16"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb9"
       }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b17"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb10"
       }
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b16",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb9",
     "@type": [
       "http://www.w3.org/2003/11/swrl#ClassAtom"
     ],
     "http://www.w3.org/2003/11/swrl#argument1": [
       {
-        "@id": "urn:swrl#x"
+        "@id": "urn:swrl#t"
       }
     ],
     "http://www.w3.org/2003/11/swrl#classPredicate": [
       {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
       }
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b17",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb10",
     "@type": [
       "http://www.w3.org/2003/11/swrl#AtomList"
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
       {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b18"
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb11"
       }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
@@ -855,44 +515,7 @@
     ]
   },
   {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b18",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
-    ],
-    "http://www.w3.org/2003/11/swrl#argument1": [
-      {
-        "@id": "urn:swrl#x"
-      }
-    ],
-    "http://www.w3.org/2003/11/swrl#argument2": [
-      {
-        "@id": "urn:swrl#t"
-      }
-    ],
-    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b19",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#AtomList"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b20"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@list": []
-      }
-    ]
-  },
-  {
-    "@id": "_:n89c1010bd88b4c4b8f6ba7c5245954d6b20",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb11",
     "@type": [
       "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
     ],
@@ -913,49 +536,326 @@
     ]
   },
   {
-    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb12",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb13"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
+    ]
+  },
+  {
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb13",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#x"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#argument2": [
+      {
+        "@id": "urn:swrl#t"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2006/time#TemporalEntity",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A region in a dimensional space that aims at representing time."
+        "@value": "A temporal interval or instant."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"
+        "@id": "https://www.w3.org/2006/time#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "time interval"
+        "@value": "temporal entity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n    "
       }
     ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "http://www.w3.org/2006/time#Interval"
+        "@language": "en",
+        "@value": "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/tvc/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "value in time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb1"
+      },
+      {
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb2"
+      },
+      {
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb6"
+      },
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Example: having the role \"graduate student\" in a specific time (e.g., now) and context (e.g., \"University of Bologna\")."
       }
     ]
   },
   {
-    "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withValue"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "_:na3018f9c629444d0a70c59afd70c608eb3"
+      }
+    ]
+  },
+  {
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.w3.org/2006/time#Instant"
+          },
+          {
+            "@id": "http://www.w3.org/2006/time#Interval"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:na3018f9c629444d0a70c59afd70c608eb6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionInfo",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime",
     "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between a time-indexed situation and a time interval."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "at time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"
+      }
     ]
   },
   {
-    "@id": "http://purl.org/dc/elements/1.1/description",
+    "@id": "http://www.essepuntato.it/2012/04/tvc/withValue",
     "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between the value held by the entity taking part to the value-in-time situation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/tvc/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "with value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2006/time#Instant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A temporal entity with zero extent or duration."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://www.w3.org/2006/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "time instant"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2006/time#TemporalEntity"
+      }
+    ]
+  },
+  {
+    "@id": "urn:swrl#x",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Variable"
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#Situation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A view on a set of entities. It can be seen as a 'relational context', reifying a relation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "situation"
+      }
     ]
   },
   {
@@ -1030,6 +930,106 @@
       {
         "@language": "en",
         "@value": "is setting for"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-person\n        tvc:hasValue :my-value-in-time .\n\n    :my-value-in-time a tvc:ValueInTime ;\n        tvc:withValue :graduate-student ;\n        tvc:atTime :my-time-interval ;\n        tvc:withinContext :my-university .\n        \n    :my-university a foaf:Organization .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between the specific context within which the fact of the entity having the value is relevant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/tvc/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "within context"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/description",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/contributor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between an entity and a time-indexed situation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has time indexed setting"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity"
       }
     ]
   }
