@@ -1,0 +1,31 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+tvc:atTime a owl:ObjectProperty ;
+    rdfs:label "at time" ;
+    vann:example """
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+
+    :my-time-interval a ti:TimeInterval ;
+        ti:hasIntervalStartDate "2017-11-01" ;
+        ti:hasIntervalEndDate "2020-03-20" .
+    """ ;
+    rdfs:comment "The relation between a value-in-time situation and the particular temporal instant or time period in which the situation takes place."@en ;
+    rdfs:domain tvc:ValueInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:range time:TemporalEntity ;
+    rdfs:subPropertyOf sit:isSettingFor ;
+    vs:term_status reg:statusStable .
+
