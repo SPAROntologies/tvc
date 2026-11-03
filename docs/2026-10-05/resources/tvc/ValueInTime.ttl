@@ -1,0 +1,38 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+tvc:ValueInTime a owl:Class ;
+    rdfs:label "value in time"@en ;
+    vann:example """
+    :my-person
+        tvc:hasValue :my-value-in-time .
+
+    :my-value-in-time a tvc:ValueInTime ;
+        tvc:withValue :graduate-student ;
+        tvc:atTime :my-time-interval ;
+        tvc:withinContext :my-university .
+    """ ;
+    rdfs:comment "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty tvc:withValue ;
+            owl:someValuesFrom owl:Thing ],
+        [ a owl:Restriction ;
+            owl:onProperty tvc:atTime ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:unionOf ( time:Instant time:Interval ) ] ],
+        [ a owl:Restriction ;
+            owl:onProperty tvc:withinContext ;
+            owl:someValuesFrom owl:Thing ],
+        tisit:TimeIndexedSituation ;
+    vs:term_status reg:statusStable ;
+    skos:note "Example: having the role \"graduate student\" in a specific time (e.g., now) and context (e.g., \"University of Bologna\")."@en .
+

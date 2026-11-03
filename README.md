@@ -1,5 +1,11 @@
 # Time-indexed Value in Context pattern
 
+[![License](https://img.shields.io/github/license/SPAROntologies/tvc)](LICENSE.md)
+[![Release](https://img.shields.io/github/v/release/SPAROntologies/tvc)](https://github.com/SPAROntologies/tvc/releases/latest)
+[![Tests](https://img.shields.io/github/actions/workflow/status/SPAROntologies/tvc/validation.yml?label=tests)](https://github.com/SPAROntologies/tvc/actions/workflows/validation.yml)
+[![Documentation](https://img.shields.io/badge/docs-sparontologies.net-blue)](http://www.sparontologies.net/ontologies/tvc)
+[![IRI](https://img.shields.io/badge/IRI-purl.org%2Fspar%2Ftvc-blue)](http://purl.org/spar/tvc)
+
 The **_Time-indexed Value in Context pattern (TVC)_** is an Ontology Design Pattern for the description of scenarios that involve entities having some value during a particular time and within a particular context.
 
 **URL:** http://purl.org/spar/tvc
